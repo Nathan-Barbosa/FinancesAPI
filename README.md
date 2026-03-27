@@ -49,8 +49,8 @@ O projeto está organizado em camadas:
 ## Como executar
 
 bash
-git clone https://github.com/SEU-USUARIO/finances-api.git
-cd finances-api
+git clone https://github.com/Nathan-Barbosa/FinancesAPI.git
+cd FinancesAPI
 dotnet restore
 dotnet ef database update
 dotnet run

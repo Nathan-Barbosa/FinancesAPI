@@ -49,15 +49,15 @@ O projeto está organizado em camadas:
 ## Como executar
 
 bash
-git clone https://github.com/Nathan-Barbosa/FinancesAPI.git
-cd FinancesAPI
-dotnet restore
-dotnet ef database update
-dotnet run
+- git clone https://github.com/Nathan-Barbosa/FinancesAPI.git
+- cd FinancesAPI
+- dotnet restore
+- dotnet ef database update
+- dotnet run
 
 ## A API estará disponível em: http://localhost:5066/swagger
 
 ## Observações
-Os dados são persistidos em SQLite
-Os endpoints podem ser testados via Swagger
-O projeto utiliza DTOs para evitar exposição direta das entidades
+- Os dados são persistidos em SQLite
+- Os endpoints podem ser testados via Swagger
+- O projeto utiliza DTOs para evitar exposição direta das entidades

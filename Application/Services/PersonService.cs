@@ -85,11 +85,11 @@ namespace FinancesAPI.Application.Services
             await _personRepository.SaveChangesAsync();
         }
 
-        public async Task<IEnumerable<PersonTotalsDto>> GetTotalsAsync()
+        public async Task<PersonTotalsResponseDto> GetTotalsAsync()
         {
             var persons = await _personRepository.GetWithTransactionsAsync();
 
-            var result = persons.Select(person =>
+            var personTotals = persons.Select(person =>
             {
                 var totalIncome = person.Transactions
                     .Where(transaction => transaction.Type == TransactionType.Income)
@@ -106,9 +106,18 @@ namespace FinancesAPI.Application.Services
                     TotalExpense = totalExpense,
                     Balance = totalIncome - totalExpense
                 };
-            });
+            }).ToList();
 
-            return result;
+            var totalIncomeAll = personTotals.Sum(p => p.TotalIncome);
+            var totalExpenseAll = personTotals.Sum(p => p.TotalExpense);
+
+            return new PersonTotalsResponseDto
+            {
+                Persons = personTotals,
+                TotalIncome = totalIncomeAll,
+                TotalExpense = totalExpenseAll,
+                Balance = totalIncomeAll - totalExpenseAll
+            };
         }
     }
 }

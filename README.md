@@ -64,19 +64,21 @@ bash
 
 ## Prints do Swagger
 
-### 📌 Visão geral dos endpoints
+## 📸 Prints do Swagger
+
+### 🔎 Visão geral dos endpoints
 ![Swagger Overview](docs/images/swagger-overview.png)
 
 ### 👤 Criar Pessoa
 ![Create Person](docs/images/create-person.png)
 
-### 💰 Transações
-![Transactions](docs/images/transactions.png)
+### 🗂️ Criar Categoria
+![Create Category](docs/images/create-category.png)
 
-### 📊 Totais por Pessoa
-![Totals Person](docs/images/totals-person.png)
+### 💰 Criar Transação
+![Create Transaction](docs/images/create-transaction.png)
 
-### 📊 Totais por Categoria
-![Totals Category](docs/images/totals-category.png)
+### 📊 Dashboard
+![Dashboard](docs/images/dashboard.png)
 
 

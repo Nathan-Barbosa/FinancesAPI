@@ -55,11 +55,11 @@ namespace FinancesAPI.Application.Services
             return result;
         }
 
-        public async Task<object> GetTotalsAsync()
+        public async Task<CategoryTotalsResponseDto> GetTotalsAsync()
         {
             var categories = await _categoryRepository.GetWithTransactionsAsync();
 
-            var result = categories.Select(category =>
+            var categoryTotals = categories.Select(category =>
             {
                 var totalIncome = category.Transactions
                     .Where(transaction => transaction.Type == TransactionType.Income)
@@ -78,18 +78,16 @@ namespace FinancesAPI.Application.Services
                 };
             });
 
-            var totalIncome = result.Sum(result => result.TotalIncome);
-            var totalExpense = result.Sum(result => result.TotalExpense);
+            var totalIncomeAll = categoryTotals.Sum(c => c.TotalIncome);
+            var totalExpenseAll = categoryTotals.Sum(c => c.TotalExpense);
 
-            var summary = new
+            return new CategoryTotalsResponseDto
             {
-                Categories = result,
-                TotalIncome = totalIncome,
-                TotalExpense = totalExpense,
-                Balance = totalIncome - totalExpense
+                Categories = categoryTotals,
+                TotalIncome = totalIncomeAll,
+                TotalExpense = totalExpenseAll,
+                Balance = totalIncomeAll - totalExpenseAll
             };
-
-            return summary;
         }
     }
 }

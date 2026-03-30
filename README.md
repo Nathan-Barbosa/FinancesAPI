@@ -64,8 +64,6 @@ bash
 
 ## Prints do Swagger
 
-## 📸 Prints do Swagger
-
 ### 🔎 Visão geral dos endpoints
 ![Swagger Overview](docs/images/swagger-overview.png)
 

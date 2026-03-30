@@ -61,3 +61,22 @@ bash
 - Os dados são persistidos em SQLite
 - Os endpoints podem ser testados via Swagger
 - O projeto utiliza DTOs para evitar exposição direta das entidades
+
+## Prints do Swagger
+
+### 📌 Visão geral dos endpoints
+![Swagger Overview](docs/images/swagger-overview.png)
+
+### 👤 Criar Pessoa
+![Create Person](docs/images/create-person.png)
+
+### 💰 Transações
+![Transactions](docs/images/transactions.png)
+
+### 📊 Totais por Pessoa
+![Totals Person](docs/images/totals-person.png)
+
+### 📊 Totais por Categoria
+![Totals Category](docs/images/totals-category.png)
+
+

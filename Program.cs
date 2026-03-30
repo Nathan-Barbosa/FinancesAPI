@@ -16,6 +16,7 @@ builder.Services.AddScoped<ITransactionRepository, TransactionRepository>();
 builder.Services.AddScoped<PersonService>();
 builder.Services.AddScoped<CategoryService>();
 builder.Services.AddScoped<TransactionService>();
+builder.Services.AddScoped<DashboardService>();
 
 builder.Services.AddControllers()
     .AddJsonOptions(options =>
